@@ -1,0 +1,93 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "debug build",
+      "command": "C:/msys64/mingw64/bin/g++.exe",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "${workspaceFolder}\\include\\imgui.cpp",
+        "${workspaceFolder}\\include\\imgui_demo.cpp",
+        "${workspaceFolder}\\include\\imgui_draw.cpp",
+        "${workspaceFolder}\\include\\imgui_widgets.cpp",
+        "${workspaceFolder}\\include\\imgui_tables.cpp",
+        "${workspaceFolder}\\include\\imgui_impl_opengl2.cpp",
+        "${workspaceFolder}\\src\\*.cpp",
+        "-o",
+        "${workspaceFolder}\\build\\debug\\PGE_imGUI.exe",
+        "-I",
+        "${workspaceFolder}\\include",
+        "-static-libstdc++",
+        "-lpthread",
+        "-lsetupapi",
+        "-lwinmm",
+        "-luser32",
+        "-lgdi32",
+        "-lgdiplus",
+        "-static",
+        "-lopengl32",
+        "-lShlwapi",
+        "-ldwmapi",
+        "-lstdc++fs",
+        "-std=c++20",
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "compiler: C:/msys64/mingw64/bin/g++.exe"
+    },
+    {
+      "type": "cppbuild",
+      "label": "release build",
+      "command": "C:/msys64/mingw64/bin/g++.exe",
+      "args": [
+        "-fdiagnostics-color=always",
+        "${workspaceFolder}\\include\\imgui.cpp",
+        "${workspaceFolder}\\include\\imgui_demo.cpp",
+        "${workspaceFolder}\\include\\imgui_draw.cpp",
+        "${workspaceFolder}\\include\\imgui_widgets.cpp",
+        "${workspaceFolder}\\include\\imgui_tables.cpp",
+        "${workspaceFolder}\\include\\imgui_impl_opengl2.cpp",
+        "${workspaceFolder}\\src\\*.cpp",
+        "-O3",
+        "-o",
+        "${workspaceFolder}\\build\\release\\PGE_imGUI.exe",
+        "-I",
+        "${workspaceFolder}\\include",
+        "-static-libstdc++",
+        "-lpthread",
+        "-lsetupapi",
+        "-lwinmm",
+        "-luser32",
+        "-lgdi32",
+        "-lgdiplus",
+        "-static",
+        "-lopengl32",
+        "-lShlwapi",
+        "-ldwmapi",
+        "-lstdc++fs",
+        "-std=c++20",
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "detail": "compiler: C:/msys64/mingw64/bin/g++.exe"
+    }
+  ]
+}
