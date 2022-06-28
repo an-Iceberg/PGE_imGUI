@@ -1,3 +1,6 @@
+// TODO: make this work with OpenGL 3
+// #define OLC_GFX_OPENGL33
+#define GLEW_STATIC
 #define OLC_PGEX_DEAR_IMGUI_IMPLEMENTATION
 #include "imgui_impl_pge.h"
 
@@ -44,12 +47,6 @@ public:
     ImGui::ShowDemoWindow();
 
     Clear(olc::Pixel(128, 0, 255));
-
-    if (GetKey(olc::A).bPressed)
-    {
-      // Redraws screen but seems a bit buggy
-      SetScreenSize(600, 1000);
-    }
 
     DrawStringProp(ScreenWidth() / 2, ScreenHeight() / 2, std::to_string(GetFPS()), olc::CYAN, 2);
 

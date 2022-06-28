@@ -304,7 +304,7 @@ namespace olc
 #ifdef OLC_GFX_OPENGL33
 #define GLEW_STATIC
 #include <GL/glew.h>
-#undef GLEW_STATIC 
+#undef GLEW_STATIC
 #include "imgui_impl_opengl3.h"
 #else
 #include "imgui_impl_opengl2.h"

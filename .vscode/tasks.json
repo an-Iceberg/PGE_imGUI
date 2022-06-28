@@ -27,6 +27,7 @@
         "-ldwmapi",
         "-lstdc++fs",
         "-std=c++20",
+        //"-lmingw32",
       ],
       "options": {
         "cwd": "${workspaceFolder}"
