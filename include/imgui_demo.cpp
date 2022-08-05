@@ -46,28 +46,28 @@
 
 Index of this file:
 
-// [SECTION] Forward Declarations, Helpers
-// [SECTION] Demo Window / ShowDemoWindow()
-// - sub section: ShowDemoWindowWidgets()
-// - sub section: ShowDemoWindowLayout()
-// - sub section: ShowDemoWindowPopups()
-// - sub section: ShowDemoWindowTables()
-// - sub section: ShowDemoWindowMisc()
-// [SECTION] About Window / ShowAboutWindow()
-// [SECTION] Style Editor / ShowStyleEditor()
-// [SECTION] Example App: Main Menu Bar / ShowExampleAppMainMenuBar()
-// [SECTION] Example App: Debug Console / ShowExampleAppConsole()
-// [SECTION] Example App: Debug Log / ShowExampleAppLog()
-// [SECTION] Example App: Simple Layout / ShowExampleAppLayout()
-// [SECTION] Example App: Property Editor / ShowExampleAppPropertyEditor()
-// [SECTION] Example App: Long Text / ShowExampleAppLongText()
-// [SECTION] Example App: Auto Resize / ShowExampleAppAutoResize()
-// [SECTION] Example App: Constrained Resize / ShowExampleAppConstrainedResize()
-// [SECTION] Example App: Simple overlay / ShowExampleAppSimpleOverlay()
-// [SECTION] Example App: Fullscreen window / ShowExampleAppFullscreen()
-// [SECTION] Example App: Manipulating window titles / ShowExampleAppWindowTitles()
-// [SECTION] Example App: Custom Rendering using ImDrawList API / ShowExampleAppCustomRendering()
-// [SECTION] Example App: Documents Handling / ShowExampleAppDocuments()
+[SECTION] Forward Declarations, Helpers
+[SECTION] Demo Window / ShowDemoWindow()
+- sub section: ShowDemoWindowWidgets()
+- sub section: ShowDemoWindowLayout()
+- sub section: ShowDemoWindowPopups()
+- sub section: ShowDemoWindowTables()
+- sub section: ShowDemoWindowMisc()
+[SECTION] About Window / ShowAboutWindow()
+[SECTION] Style Editor / ShowStyleEditor()
+[SECTION] Example App: Main Menu Bar / ShowExampleAppMainMenuBar()
+[SECTION] Example App: Debug Console / ShowExampleAppConsole()
+[SECTION] Example App: Debug Log / ShowExampleAppLog()
+[SECTION] Example App: Simple Layout / ShowExampleAppLayout()
+[SECTION] Example App: Property Editor / ShowExampleAppPropertyEditor()
+[SECTION] Example App: Long Text / ShowExampleAppLongText()
+[SECTION] Example App: Auto Resize / ShowExampleAppAutoResize()
+[SECTION] Example App: Constrained Resize / ShowExampleAppConstrainedResize()
+[SECTION] Example App: Simple overlay / ShowExampleAppSimpleOverlay()
+[SECTION] Example App: Fullscreen window / ShowExampleAppFullscreen()
+[SECTION] Example App: Manipulating window titles / ShowExampleAppWindowTitles()
+[SECTION] Example App: Custom Rendering using ImDrawList API / ShowExampleAppCustomRendering()
+[SECTION] Example App: Documents Handling / ShowExampleAppDocuments()
 
 */
 
@@ -5816,7 +5816,7 @@ static void ShowDemoWindowMisc()
                 ImGui::SetNextFrameWantCaptureMouse(capture_override_mouse == 1);
             if (ImGui::IsItemHovered() && capture_override_keyboard != -1)
                 ImGui::SetNextFrameWantCaptureKeyboard(capture_override_keyboard == 1);
-            
+
             ImGui::TreePop();
         }
 

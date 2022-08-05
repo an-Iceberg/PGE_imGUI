@@ -7,17 +7,23 @@
 #define OLC_PGE_APPLICATION
 #include "olcPixelGameEngine.h"
 
+#include <string>
+
 class Example : public olc::PixelGameEngine
 {
+private:
   olc::imgui::PGE_ImGUI pge_imgui;
   int m_GameLayer;
+  int counter = 0;
+  bool open = true;
+  bool close = false;
 
 public:
   //PGE_ImGui can automatically call the SetLayerCustomRenderFunction by passing
   //true into the constructor.  false is the default value.
   Example() : pge_imgui(false)
   {
-    sAppName = "Test Application";
+    sAppName = "Dear ImGui x olc::PixelGameEngine Test Application";
   }
 
 public:
@@ -44,7 +50,65 @@ public:
 
     //Game Drawing code here
     //Create and react to your UI here, it will be drawn during the layer draw function
-    ImGui::ShowDemoWindow();
+    // ImGui::ShowDemoWindow();
+
+    ImGui::StyleColorsClassic();
+
+    ImGuiStyle& roundBorders = ImGui::GetStyle();
+    roundBorders.WindowBorderSize = 1;
+    roundBorders.ChildBorderSize = 1;
+    roundBorders.PopupBorderSize = 1;
+    roundBorders.FrameBorderSize = 1;
+    roundBorders.TabBorderSize = 1;
+    roundBorders.WindowRounding = 12;
+    roundBorders.ChildRounding = 12;
+    roundBorders.FrameRounding = 12;
+    roundBorders.PopupRounding = 12;
+    roundBorders.ScrollbarRounding = 12;
+    roundBorders.GrabRounding = 12;
+    roundBorders.TabRounding = 12;
+    roundBorders.Colors[0] = ImVec4(1, 2, 3, 1);
+
+    ImGui::BeginMainMenuBar();
+    {
+      ImGui::Text("Sample Text");
+      ImGui::Separator();
+
+      if (ImGui::BeginMenu("Menu"))
+      {
+        ImGui::MenuItem("Label", "", false, false);
+        if (ImGui::Button("Increment"))
+        {
+          counter++;
+        }
+        ImGui::Separator();
+        ImGui::MenuItem("Label");
+        ImGui::EndMenu();
+      }
+
+      ImGui::Separator();
+    }
+    ImGui::EndMainMenuBar();
+
+    ImGuiWindowFlags windowFlags = 0;
+    windowFlags |= ImGuiWindowFlags_NoMove;
+    windowFlags |= ImGuiWindowFlags_NoCollapse;
+    windowFlags |= ImGuiWindowFlags_NoResize;
+
+    ImGui::SetNextWindowPos(ImVec2(0, 19));
+    ImGui::SetNextWindowSize(ImVec2(ScreenWidth() / 2, ScreenHeight() - 19));
+    ImGui::Begin("Name", NULL, windowFlags);
+    {
+      ImGui::Text("Some Text");
+      if (ImGui::Button("Increment"))
+      {
+        counter++;
+      }
+      ImGui::SameLine();
+      // ImGui::Text can be used the same way as printf
+      ImGui::Text("%i", counter);
+    }
+    ImGui::End();
 
     Clear(olc::Pixel(128, 0, 255));
 
@@ -64,7 +128,7 @@ int main()
 {
   Example demo;
 
-  if (demo.Construct(1000, 600, 1, 1))
+  if (demo.Construct(1280, 720, 1, 1))
   {
     demo.Start();
   }
